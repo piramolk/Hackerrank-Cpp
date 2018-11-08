@@ -1,0 +1,30 @@
+#include <sstream>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> parseInts(string str) {
+   // Complete this function
+   stringstream ss(str);
+    vector<int> v;
+    
+    for(int i=0; ss>>i; ss.ignore(1)){
+      v.push_back(i);
+    }
+    return v;
+}
+
+
+//ss.ignore() ignores the next character (in this case that'd be a comma). It "looks like" doing ++i, since ss goes to the next character. I think it's bad coding style. ignore() is actually a function that takes an optional parameter (that defaults to 1) telling how many characters to ignore. It'd be better to write ss.ignore(1).
+//Also, i=0 is useless since i gets assigned right after in the condition section ss>>i.
+
+int main() {
+    string str;
+    cin >> str;
+    vector<int> integers = parseInts(str);
+    for(int i = 0; i < integers.size(); i++) {
+        cout << integers[i] << "\n";
+    }
+    
+    return 0;
+}
