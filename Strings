@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+   // Complete the program
+    int length_a, length_b;
+    string a, b, c, s;
+    
+    cin >> a >> b;
+    
+    //get the lengths, 1st line
+    length_a = a.size();
+    length_b = b.size();
+    
+    //get the new string, 2nd line
+    c= a+b; 
+    
+    
+    //make the new strings 3rd line
+// a =abcd , b=ef, s=ebcd af
+    string anew, bnew; 
+    char c0= b[0];
+    char c1= a[0];
+    
+    a[0] = c0;
+    
+    b[0] = c1;
+
+        
+    cout << length_a << " " << length_b << "\n";
+    cout << c <<"\n";
+    cout << a << " "<< b << "\n";
+        
+    return 0;
+}
